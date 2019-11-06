@@ -5,7 +5,7 @@ var server = require('http').Server(app)
 var io = require('socket.io').listen(server)
 var Tail = require('tail').Tail;
  
-tail = new Tail("logs.txt");
+tail = new Tail("logs.txt", {fromBeginning: true});
  
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'index.html'))
