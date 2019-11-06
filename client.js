@@ -1,6 +1,8 @@
 var socket = io();
 
 
+const allLineEls = []
+
 function append(line) {
   const [_, timestamp, severity, account, message] = line.split(/(\[.*\]) (\[.*\]) (?:<(.*)> )?(.*)/)
   let el
@@ -13,6 +15,11 @@ function append(line) {
     el.addClass('error')
   }
   $('#lines').append(el)
+  allLineEls.push(el)
+  if (allLineEls.length >= 100) {
+    let removed = allLineEls.shift()
+    removed.remove()
+  }
 }
 
 socket.on('line', function(line) {
