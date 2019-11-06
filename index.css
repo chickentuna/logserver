@@ -1,0 +1,21 @@
+#lines {
+  text-align: left;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 1em;
+  color: black;
+  font-family: monospace;
+}
+
+.line {
+  margin: 0;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
