@@ -1,8 +1,7 @@
 var socket = io();
 
-//[Mon 25 13:53] [LOG] <BoldLibrarian_9666> https://playr.gg/contest/ECngjLZ
 function append(line) {
-  // const [_, timestamp, severity, account, message] = line.split(/(\[.*\]) (\[.*\]) (?:<(.*)> )?(.*)/)
+  const [_, timestamp, severity, account, message] = line.split(/(\[.*\]) (\[.*\]) (?:<(.*)> )?(.*)/)
   let el
   if (line === '') {
     el = $(`<p class="line"><br></p>`)
