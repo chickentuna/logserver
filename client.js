@@ -9,7 +9,7 @@ function append(line) {
   if (line === '') {
     el = $(`<p class="line"><br></p>`)
   } else {
-    el = $(`<p class="line">`).text(line)
+    el = $(`<p class="line">`).text(line.replace(/(https:\/\/[^ ]+)/, '<a href="$1">$1</a>'))
   }
   if (severity && severity.includes('ERROR')) {
     el.addClass('error')

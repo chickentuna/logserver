@@ -38,9 +38,12 @@ server.listen(8081, function () {
 
 tail.on("line", function(data) {
   history.push(data)
+  if (history.length > 400) {
+    history.shift()
+  }
   io.emit('line', data)
 });
- 
+
 tail.on("error", function(error) {
   console.log('ERROR: ', error);
 });
