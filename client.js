@@ -18,7 +18,7 @@ function append(line) {
   if (severity && severity.includes('ERROR')) {
     el.addClass('error')
   }
-  $('#lines').append(el)
+  $('#lines').prepend(el)
 }
 
 socket.on('line', function(line) {
